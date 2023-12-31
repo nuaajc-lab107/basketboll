@@ -1,0 +1,4 @@
+".\Objects\mian.obj",
+".\Objects\Delay.obj" 
+TO ".\Objects\ji_fen_lan" 
+PRINT(".\Listings\ji_fen_lan.m51") RAMSIZE(256) 

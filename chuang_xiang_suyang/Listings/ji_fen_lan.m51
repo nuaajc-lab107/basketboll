@@ -1,0 +1,354 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    12/14/2023  16:55:11  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+F:\SOFT\KELI\C51\BIN\BL51.EXE .\Objects\mian.obj, .\Objects\Delay.obj TO .\Objects\ji_fen_lan PRINT (.\Listings\ji_fen_l
+>> an.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\mian.obj (MIAN)
+  .\Objects\Delay.obj (DELAY)
+  F:\SOFT\KELI\C51\LIB\C51S.LIB (?C_STARTUP)
+  F:\SOFT\KELI\C51\LIB\C51S.LIB (?C?UIDIV)
+  F:\SOFT\KELI\C51\LIB\C51S.LIB (?C?SIDIV)
+  F:\SOFT\KELI\C51\LIB\C51S.LIB (?C_INIT)
+
+
+LINK MAP OF MODULE:  .\Objects\ji_fen_lan (MIAN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     001BH     UNIT         ?DT?MIAN
+            DATA    0023H     0001H     UNIT         _DATA_GROUP_
+            IDATA   0024H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0017H     UNIT         ?PR?MAIN?MIAN
+                    001AH     0001H                  *** GAP ***
+            CODE    001BH     0003H     ABSOLUTE     
+            CODE    001EH     00CCH     UNIT         ?PR?JISHI?MIAN
+            CODE    00EAH     00A1H     UNIT         ?PR?XINSHI?MIAN
+            CODE    018BH     009FH     UNIT         ?PR?DAOJISHI?MIAN
+            CODE    022AH     008CH     UNIT         ?C_C51STARTUP
+            CODE    02B6H     008BH     UNIT         ?C?LIB_CODE
+            CODE    0341H     0074H     UNIT         ?PR?_NIXIE?MIAN
+            CODE    03B5H     006BH     UNIT         ?PR?BUTTON?MIAN
+            CODE    0420H     0030H     UNIT         ?C_INITSEG
+            CODE    0450H     0015H     UNIT         ?PR?_DELAY?DELAY
+            CODE    0465H     0012H     UNIT         ?PR?TIMER1INIT?MIAN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\ji_fen_lan (MIAN)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?MIAN
+  +--> ?C_INITSEG
+
+?PR?MAIN?MIAN                  -----    -----
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/14/2023  16:55:11  PAGE 2
+
+
+  +--> ?PR?TIMER1INIT?MIAN
+  +--> ?PR?BUTTON?MIAN
+  +--> ?PR?XINSHI?MIAN
+  +--> ?PR?DAOJISHI?MIAN
+
+?PR?BUTTON?MIAN                0023H    0001H
+  +--> ?PR?_DELAY?DELAY
+
+?PR?XINSHI?MIAN                -----    -----
+  +--> ?PR?_NIXIE?MIAN
+  +--> ?PR?_DELAY?DELAY
+
+?PR?DAOJISHI?MIAN              -----    -----
+  +--> ?PR?_NIXIE?MIAN
+  +--> ?PR?_DELAY?DELAY
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\ji_fen_lan (MIAN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MIAN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0352H         PUBLIC        _Nixie
+  D:0080H         PUBLIC        P0
+  B:00A8H.7       PUBLIC        EA
+  B:0090H.0       PUBLIC        P1_0
+  B:00A0H.0       PUBLIC        P2_0
+  B:0090H.1       PUBLIC        P1_1
+  B:00A0H.1       PUBLIC        P2_1
+  B:0090H.2       PUBLIC        P1_2
+  B:00A0H.2       PUBLIC        P2_2
+  B:0090H.3       PUBLIC        P1_3
+  B:0090H.4       PUBLIC        P1_4
+  C:00EAH         PUBLIC        xinshi
+  C:001EH         PUBLIC        jishi
+  D:0008H         SYMBOL        flag
+  C:03B5H         PUBLIC        button
+  C:0003H         PUBLIC        main
+  D:0009H         SYMBOL        time
+  D:0089H         PUBLIC        TMOD
+  D:000BH         SYMBOL        fen
+  D:000DH         SYMBOL        sec
+  D:000FH         SYMBOL        cout
+  B:00A8H.3       PUBLIC        ET1
+  C:0465H         PUBLIC        Timer1Init
+  D:008DH         PUBLIC        TH1
+  C:018BH         PUBLIC        daojishi
+  D:0011H         SYMBOL        jia_fen
+  D:008BH         PUBLIC        TL1
+  B:00B8H.3       PUBLIC        PT1
+  B:0088H.6       PUBLIC        TR1
+  D:0013H         SYMBOL        fen_shi
+  D:0015H         SYMBOL        fen_ge
+  D:0017H         PUBLIC        NixieTable
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/14/2023  16:55:11  PAGE 3
+
+
+  D:0021H         SYMBOL        yi_fen
+  -------         PROC          L?0061
+  -------         ENDPROC       L?0061
+  -------         PROC          _NIXIE
+  D:0007H         SYMBOL        Location
+  D:0004H         SYMBOL        Number
+  C:0352H         LINE#         13
+  C:0352H         LINE#         14
+  C:0352H         LINE#         15
+  C:037FH         LINE#         16
+  C:037FH         LINE#         17
+  C:0383H         LINE#         18
+  C:038BH         LINE#         19
+  C:038FH         LINE#         20
+  C:0397H         LINE#         21
+  C:039BH         LINE#         22
+  C:03A3H         LINE#         23
+  C:03A7H         LINE#         24
+  C:03ADH         LINE#         25
+  C:03ADH         LINE#         26
+  C:03B4H         LINE#         27
+  -------         ENDPROC       _NIXIE
+  -------         PROC          TIMER1INIT
+  C:0465H         LINE#         28
+  C:0465H         LINE#         29
+  C:0465H         LINE#         32
+  C:0468H         LINE#         33
+  C:046BH         LINE#         34
+  C:046EH         LINE#         36
+  C:0470H         LINE#         37
+  C:0472H         LINE#         38
+  C:0474H         LINE#         39
+  C:0476H         LINE#         40
+  -------         ENDPROC       TIMER1INIT
+  -------         PROC          XINSHI
+  C:00EAH         LINE#         43
+  C:00EAH         LINE#         44
+  C:00EAH         LINE#         45
+  C:00EDH         LINE#         46
+  C:00F4H         LINE#         47
+  C:0104H         LINE#         48
+  C:010BH         LINE#         49
+  C:011FH         LINE#         50
+  C:0126H         LINE#         51
+  C:0136H         LINE#         52
+  C:013CH         LINE#         53
+  C:0145H         LINE#         54
+  C:014AH         LINE#         55
+  C:0153H         LINE#         56
+  C:0159H         LINE#         57
+  C:016DH         LINE#         58
+  C:0174H         LINE#         59
+  C:0184H         LINE#         60
+  -------         ENDPROC       XINSHI
+  -------         PROC          DAOJISHI
+  C:018BH         LINE#         62
+  C:018BH         LINE#         63
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/14/2023  16:55:11  PAGE 4
+
+
+  C:018BH         LINE#         64
+  C:018EH         LINE#         65
+  C:0195H         LINE#         66
+  C:01A5H         LINE#         67
+  C:01ACH         LINE#         68
+  C:01C0H         LINE#         69
+  C:01C7H         LINE#         70
+  C:01D7H         LINE#         71
+  C:01DDH         LINE#         72
+  C:01E5H         LINE#         73
+  C:01EAH         LINE#         74
+  C:01F2H         LINE#         75
+  C:01F8H         LINE#         76
+  C:020CH         LINE#         77
+  C:0213H         LINE#         78
+  C:0223H         LINE#         79
+  -------         ENDPROC       DAOJISHI
+  -------         PROC          BUTTON
+  -------         DO            
+  D:0023H         SYMBOL        ci
+  -------         ENDDO         
+  C:03B5H         LINE#         81
+  C:03B5H         LINE#         82
+  C:03B5H         LINE#         83
+  C:03B8H         LINE#         84
+  C:03BBH         LINE#         85
+  C:03BBH         LINE#         86
+  C:03C1H         LINE#         87
+  C:03C4H         LINE#         88
+  C:03C4H         LINE#         89
+  C:03C4H         LINE#         90
+  C:03CCH         LINE#         91
+  C:03CCH         LINE#         92
+  C:03CFH         LINE#         93
+  C:03CFH         LINE#         94
+  C:03D6H         LINE#         95
+  C:03D9H         LINE#         96
+  C:03D9H         LINE#         97
+  C:03D9H         LINE#         98
+  C:03E1H         LINE#         100
+  C:03E1H         LINE#         101
+  C:03E4H         LINE#         102
+  C:03E4H         LINE#         103
+  C:03EBH         LINE#         104
+  C:03EEH         LINE#         105
+  C:03EEH         LINE#         106
+  C:03EEH         LINE#         107
+  C:03F6H         LINE#         109
+  C:03F6H         LINE#         110
+  C:03F9H         LINE#         111
+  C:03F9H         LINE#         112
+  C:0400H         LINE#         113
+  C:0403H         LINE#         114
+  C:0403H         LINE#         115
+  C:0403H         LINE#         116
+  C:040BH         LINE#         117
+  C:040BH         LINE#         118
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/14/2023  16:55:11  PAGE 5
+
+
+  C:040EH         LINE#         119
+  C:040EH         LINE#         120
+  C:0410H         LINE#         121
+  C:0417H         LINE#         122
+  C:041AH         LINE#         123
+  C:041AH         LINE#         124
+  C:041CH         LINE#         125
+  C:041CH         LINE#         126
+  C:041FH         LINE#         127
+  C:041FH         LINE#         128
+  -------         ENDPROC       BUTTON
+  -------         PROC          JISHI
+  C:001EH         LINE#         131
+  C:0031H         LINE#         133
+  C:0039H         LINE#         134
+  C:003DH         LINE#         135
+  C:003DH         LINE#         136
+  C:004BH         LINE#         137
+  C:004BH         LINE#         138
+  C:0053H         LINE#         139
+  C:0053H         LINE#         140
+  C:005BH         LINE#         141
+  C:005BH         LINE#         142
+  C:005DH         LINE#         143
+  C:005DH         LINE#         144
+  C:005DH         LINE#         145
+  C:0065H         LINE#         146
+  C:006BH         LINE#         147
+  C:0074H         LINE#         148
+  C:0074H         LINE#         149
+  C:007CH         LINE#         150
+  C:0082H         LINE#         151
+  C:008AH         LINE#         152
+  C:008AH         LINE#         153
+  C:0099H         LINE#         154
+  C:00A8H         LINE#         155
+  C:00AAH         LINE#         157
+  C:00AAH         LINE#         158
+  C:00B0H         LINE#         159
+  C:00B0H         LINE#         160
+  C:00B0H         LINE#         161
+  C:00B0H         LINE#         162
+  C:00B2H         LINE#         164
+  C:00B2H         LINE#         165
+  C:00BDH         LINE#         166
+  C:00BDH         LINE#         167
+  C:00C5H         LINE#         168
+  C:00CBH         LINE#         169
+  C:00D1H         LINE#         170
+  C:00D1H         LINE#         171
+  C:00D3H         LINE#         172
+  C:00D3H         LINE#         173
+  C:00D3H         LINE#         174
+  C:00D3H         LINE#         175
+  C:00D6H         LINE#         176
+  C:00D9H         LINE#         177
+  -------         ENDPROC       JISHI
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  12/14/2023  16:55:11  PAGE 6
+
+
+  -------         PROC          MAIN
+  C:0003H         LINE#         179
+  C:0003H         LINE#         180
+  C:0003H         LINE#         181
+  C:0006H         LINE#         182
+  C:000AH         LINE#         183
+  C:000AH         LINE#         184
+  C:000DH         LINE#         185
+  C:0010H         LINE#         186
+  C:0012H         LINE#         187
+  C:0012H         LINE#         188
+  C:0012H         LINE#         189
+  C:0015H         LINE#         190
+  C:0018H         LINE#         191
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MIAN
+
+  -------         MODULE        DELAY
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0450H         PUBLIC        _Delay
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        xms
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0450H         LINE#         1
+  C:0450H         LINE#         2
+  C:0450H         LINE#         4
+  C:045AH         LINE#         5
+  C:045AH         LINE#         6
+  C:045CH         LINE#         7
+  C:045EH         LINE#         9
+  C:045EH         LINE#         10
+  C:0460H         LINE#         11
+  C:0462H         LINE#         12
+  C:0464H         LINE#         13
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        DELAY
+
+  -------         MODULE        ?C?UIDIV
+  C:02B6H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+  -------         MODULE        ?C?SIDIV
+  C:030BH         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
+Program Size: data=37.0 xdata=0 code=1142
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
